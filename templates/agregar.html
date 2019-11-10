@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block title %}
+    Agregar
+{% endblock %}
+
+{% block main %}
+<form action="/agregar" method="POST">
+    <div class="jumbotron">
+        <p class="lead">Agregar al inventario!</p>
+        <hr class="my-4">
+        <p>Porfavor rellenar los campos para agregar el libro al inventario!</p>
+
+        <div id="banner">
+            <div class="inline-block">
+                <img src ="/static/media/img_02.jpg" height="200" width="700">
+            </div>
+            
+        </div>
+
+            <div class="form-group" id=busqueda>
+            <br>
+            <div>
+                <a>Titulo del libro:</a>
+                <input autocomplete="off" autofocus class="form-control" name="titulo" placeholder="Título del libro" type="text" required="required"/>
+            </div>
+
+            <br>
+            
+            <div>
+                <a>Autor:</a>
+                <input autocomplete="off" autofocus class="form-control" name="autor" placeholder="Apellido, Nombre" type="text" required="required"/>
+                
+            </div>
+
+            <br>
+    
+            <div>
+                <a>Tipo:</a>
+                <select class="custom-select" name="tipo" placeholder="Elije un tipo de libro" type="text" required="required">
+                        <option disabled="disabled">Tipo de libro</option>
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Tecnico">Tecnico</option>
+                            <option value="Medicina">Medicina</option>
+                            <option value="Ingeniería">Ingeniería</option>
+                            <option value="Literatura">Literatura</option>
+                            <option value="Otro">Otro</option>
+                    </select>
+                    
+            </div>
+
+            <br>
+
+            <div>
+                <a>Año de la edición:</a>
+                <input autocomplete="off" autofocus class="form-control" name="anho" placeholder="Año de la edición o numero de edición" type="number" required="required"/>
+            </div>
+
+            <br>
+
+            <div>
+                    <a>Editorial:</a>
+                    <input autocomplete="off" autofocus class="form-control" name="editorial" placeholder="Casa distribuidora..." type="text" required="required"/>
+                </div>
+
+            <br>
+    
+            <div>
+                <a>Calidad:</a>
+                <input autocomplete="off" autofocus class="form-control" name="calidad" placeholder="Calidad en la que se encuentra..." type="text" required="required"/>
+            </div>
+    
+            <br>
+
+            <div>
+                <a>Precio:</a>
+                <input autocomplete="off" autofocus class="form-control" name="precio" placeholder="Valor del libro (C$)" type="number" step="0.01" required="required"/>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-success">Agregar!</button>
+
+            </div>
+    </form>
+        
+{% endblock %}

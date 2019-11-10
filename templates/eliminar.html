@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}
+    Eliminar
+{% endblock %}
+{% block main %}
+<form action="/eliminar" method="POST">
+    <div class="jumbotron">
+            <p class="lead">Eliminar libros de inventario</p>
+            <div id="banner">
+                    <div id="banner">
+                            <div class="inline-block">
+                                <img src ="/static/media/img_04.jpg" height="200" width="700">
+                            </div>
+                            <br>
+            <hr class="my-4">
+            <p class="lead">Atención: Esta acción no puede deshacerse!</p>
+            <p class="leas">¿Esta seguro que desea eliminar este libro?</p>
+            <div class="form-group">
+            <button type="submit" class="btn btn-danger" name="eliminar" value="{{ id_reg }}">Eliminar!</button>
+            </div>
+    </div>
+</form>
+
+{% endblock %}

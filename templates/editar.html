@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block title %}
+    Editar
+{% endblock %}
+
+{% block main %}
+<form action="/editar" method="POST">
+    <div class="jumbotron">
+            <p class="lead">Editar libros en el inventario</p>
+            <div id="banner">
+                    <div class="inline-block">
+                        <img src ="/static/media/img_02.jpg" height="200" width="700">
+                    </div>
+                    <br>
+            <hr class="my-4">
+            <div class="form-group">
+                <p class="lead">Porfavor cambiar los campos del libros los cuales editará</p>
+                <div>
+                <a>Titulo del libro:</a>
+                <input autocomplete="off" value="{{ stock.titulo }}" autofocus class="form-control" name="titulo" placeholder="Título del libro" type="text" required="required"/>
+                </div>
+
+                <br>
+                
+                <div>
+                <a>Autor:</a>
+                <input autocomplete="off" value="{{ stock.autor }}" autofocus class="form-control" name="autor" placeholder="Autor del libro" type="text" required="required"/>
+                </div>
+
+                <br>
+
+                <div>
+                <a>Tipo:</a>
+                <input autocomplete="off" value="{{ stock.tipo }}" autofocus class="form-control" name="tipo" placeholder="Materia del libro" type="text" required="required"/>
+                </div>
+
+                <br>
+
+                <div>
+                <a>Año de la edición:</a>
+                <input autocomplete="off" value="{{ stock.anho }}" autofocus class="form-control" name="anho" placeholder="Año de la edición o numero de edición" type="text" required="required"/>
+                </div>
+
+                <br>
+
+                <div>
+                <a>Editorial:</a>
+                <input autocomplete="off" value="{{ stock.editorial }}" autofocus class="form-control" name="editorial" placeholder="Casa distribuidora" type="text" required="required"/>
+                </div>
+
+                <br>
+
+                <div>
+                <a>Calidad:</a>
+                <input autocomplete="off" value="{{ stock.calidad }}" autofocus class="form-control" name="calidad" placeholder="Calidad en la que se encuentra..." type="text" required="required"/>
+                </div>
+
+                <br>
+
+                <div>
+                <a>Precio:</a>
+                <input autocomplete="off" value="{{ stock.precio }}" autofocus class="form-control" name="precio" placeholder="Valor del libro (C$)" type="text" required="required"/>
+                </div>
+
+                <br>
+
+                <div>
+                <button type="submit" class="btn btn-warning" name="editar" value="{{ id_reg }}">Editar!</button>
+                </div>
+            </div>
+    </div>
+</form>
+
+{% endblock %}

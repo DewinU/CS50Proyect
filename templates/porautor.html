@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}
+    Busqueda
+{% endblock %}
+
+{% block main %}
+<main class="container p-5">
+    <div class="jumbotron mycustom-jumbotron">
+        <p class="lead">Busqueda de libros</p>
+        <hr class="my-4">
+        <p class="lead">Libros en inventario!</p>
+
+        <div id="banner">
+                <div class="inline-block">
+                    <img src ="/static/media/img_02.jpg" height="200" width="700">
+                </div>
+                <br>
+
+        <div>
+            <table class="table table striped">
+                    <thead>
+                        <tr>
+                            <th>N° Reg</th>
+                            <th>Autor</th>
+                            <th>Titulo</th>
+                            <th>Tipo</th>
+                            <th>Año o edición</th>
+                            <th>Editorial</th>
+                            <th>Calidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    {% for stock in libros %}
+                    <tbody>
+                        <td>{{ stock.idlib }}</td>
+                        <td>{{ stock.autor }}</td>
+                        <td>{{ stock.titulo }}</td>
+                        <td>{{ stock.tipo }}</td>
+                        <td>{{ stock.anho }}</td>
+                        <td>{{ stock.editorial }} </td>
+                        <td>{{ stock.calidad }}</td>
+                        <td>{{ stock.precio |usd }} </td>
+                        <td><a class="btn btn-warning" href="/editar/{{stock.idlib}}">Editar</button></td>
+                        <td><a class="btn btn-danger" href="/eliminar/{{stock.idlib}}">Eliminar</button></td>
+                    </tbody>
+                    {% endfor %}
+        </div>
+</div>
+</main>
+
+
+{% endblock %}

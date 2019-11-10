@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}
+    Buscar
+{% endblock %}
+{% block main %}
+<form action="/buscar" method="POST">
+    <div class="jumbotron">
+        <p class="lead">Busqueda en libros de inventario</p>
+        <div id="banner">
+            <div class="inline-block">
+                <img src ="/static/media/img_03.jpg" height="200" width="700">
+            </div>
+            <br>
+        </div>
+        <hr class="my-4">
+        <div class="form-group">
+            <p class="lead">Porfavor seleccionar el tipo de busqueda </p>
+            <select class="custom-select" name="busqueda" id="busqueda" placeholder="Tipo de busqueda" onchange='checkvalue(this.value);'>
+                <option value="titulo">Por titulo</option>
+                <option value="autor">Por autor</option>
+            </select>
+            <hr class="my-4">
+
+        <div id=titulo style='display:block;'>
+        <a >Busqueda por título:</a>
+
+            <input autocomplete="off" autofocus class="form-control" name="titulo" placeholder="Título del libro" type="text" />
+        </div>
+        <div id=autor style='display:none;'>
+            <a>Busqueda por autor:</a>
+            <input autocomplete="off" autofocus class="form-control" name="autor" placeholder="Apellido, Nombre" type="text" />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Buscar!</button>
+        </div>
+    </div>    
+</form>
+
+<script>
+        function checkvalue(val)
+        {
+            var element=document.getElementById('busqueda');
+
+            var divlen=document.getElementById('titulo');
+            if(val=='titulo')
+                divlen.style.display='block';
+            else
+                divlen.style.display='none';
+
+            var divlen=document.getElementById('autor');
+            if(val=='autor')
+                divlen.style.display='block';
+            else
+                divlen.style.display='none';
+
+        }
+</script> 
+
+
+{% endblock %}

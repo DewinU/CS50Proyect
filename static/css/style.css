@@ -1,0 +1,57 @@
+#banner {
+    display: block;
+  }
+  
+  .images {
+    display: inline-block;
+  }
+
+
+  body
+  {
+      background-color: lightblue;
+  }
+
+main
+{
+
+    
+    /* scroll horizontally as needed */
+    text-align: center;
+    
+    overflow-x: auto;
+
+    overflow-y: auto;
+
+    /* center contents */
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: 40%;
+}
+
+main .custom-select
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: 40%;
+}
+
+.mycustom-jumbotron {
+    width: 1100px;
+  }
+
+
+
+
+  
+ 
+
+
